@@ -1,0 +1,14 @@
+## Getting Started
+
+Edit ircwatch.rb to list channels you want logged
+
+ruby ircwatch.rb &
+ruby irclogs.rb &
+
+Hit up a browser at localhost:4567
+
+## Database Setup
+
+require 'sequel'
+DB = Sequel.sqlite('irc.db')
+DB << "create table messages (channel varchar(255), nick varchar(255), message text, at timestamp);"
